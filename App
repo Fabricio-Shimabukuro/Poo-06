@@ -1,0 +1,16 @@
+package com.fatec.ads;
+
+public class App {
+    public static void main(String[] args) {
+        try {
+            var recepcionista = new Recepcionista();
+            var medico = new Medico();
+
+            var agenda = recepcionista.marcarAgenda();
+            medico.realizarConsulta(agenda);
+
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+}
