@@ -1,0 +1,30 @@
+package com.fatec.ads;
+
+public class Recepcionista extends Funcionario {
+    String cpf;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Agenda marcarAgenda() throws Exception {
+        var p1 = new Paciente(1, "José da Silva", "jose@email.com");
+
+        var m1 = new Medico();
+        m1.setNome("Maria");
+        m1.setCrm("1234567");
+        m1.setEspecialidade("Clínico");
+
+        var a1 = new Agenda();
+        a1.setData("01/04/2026");
+        a1.setHora("10:00");
+        a1.setMedico(m1);
+        a1.setPaciente(p1);
+
+        return a1;
+    }
+}
