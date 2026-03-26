@@ -1,0 +1,50 @@
+package com.fatec.ads;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Consulta {
+    protected String hora;
+    protected String data;
+    protected Medico medico;
+    protected Paciente paciente;
+    protected String motivo;
+    protected String historico;
+
+    protected List<Exame> exames = new ArrayList<>();
+    protected List<Receita> receitas = new ArrayList<>();
+
+    public void marcar(){}
+    public void cancelar(){}
+    public void consultar(){}
+    public void realizar(){}
+    public void atualizar(){}
+
+    public void setMotivo(String motivo) throws Exception {
+        if(motivo == null || motivo.isEmpty())
+            throw new Exception("Motivo obrigatório!");
+        this.motivo = motivo;
+    }
+
+    public void setData(String data) { this.data = data; }
+    public void setHora(String hora) { this.hora = hora; }
+    public void setMedico(Medico medico) { this.medico = medico; }
+    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+
+    public String getData() { return data; }
+    public String getHora() { return hora; }
+    public Medico getMedico() { return medico; }
+    public Paciente getPaciente() { return paciente; }
+
+    public List<Exame> getExames() { return exames; }
+    public List<Receita> getReceitas() { return receitas; }
+
+    public void mostrar() {
+        System.out.println("Consulta em " + data + " às " + hora);
+        medico.mostrar();
+        paciente.mostrar();
+
+        exames.forEach(e -> e.mostrar());
+        receitas.forEach(r -> r.mostrar());
+    }
+}
