@@ -1,0 +1,29 @@
+package com.fatec.ads;
+
+public class Paciente {
+    private int codigo;
+    private String nome;
+    private String email;
+
+    public Paciente(){}
+
+    public Paciente(int codigo, String nome, String email) throws Exception {
+        this.codigo = codigo;
+        setEmail(email);
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) throws Exception {
+        if(email == null || !email.contains("@"))
+            throw new Exception("Email inválido!");
+        this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void mostrar() {
+        System.out.println("Paciente: " + nome);
+    }
+}
