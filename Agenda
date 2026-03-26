@@ -1,0 +1,13 @@
+package com.fatec.ads;
+
+public class Agenda extends Consulta {
+
+    public Agenda(){}
+
+    public Agenda(String data, String hora, Medico medico, Paciente paciente) {
+        this.data = data;
+        this.hora = hora;
+        this.medico = medico;
+        this.paciente = paciente;
+    }
+}
