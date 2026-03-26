@@ -1,0 +1,7 @@
+package com.fatec.ads;
+
+public class ExceptionClinica extends Exception {
+    public ExceptionClinica(String codigo, String mensagem) {
+        super(codigo + ": " + mensagem);
+    }
+}
